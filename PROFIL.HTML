@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block judul %}Profil{% endblock %}{% block page %}profil{% endblock %}
+{% block isi %}
+<header class="bar"><strong class="logo"><img class="logo-img" src="{{ url_for('static', filename='icon.svg') }}" alt="">Si Siswa</strong>
+  <nav><a href="/beranda">Beranda</a><a class="aktif" href="/profil">Profil</a></nav>
+  <button class="tema-btn" id="tema" title="Ganti mode">🌓</button></header>
+<main class="grid satu"><section class="kartu profil">
+  <div class="avatar" id="avatar">?</div><h2 id="p-nama">...</h2><p class="redup" id="p-email"></p>
+  <div class="statistik"><div><b id="s-jadwal">0</b>Matkul</div><div><b id="s-aktif">0</b>Tugas aktif</div><div><b id="s-selesai">0</b>Selesai</div></div>
+  <form id="f-profil" class="form-mini"><input id="in-nama" placeholder="Ubah nama" required><button class="btn">Simpan Nama</button></form>
+  <a class="btn keluar" href="/keluar">Keluar 👋</a></section></main>
+{% endblock %}

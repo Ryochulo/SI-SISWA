@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block judul %}Masuk{% endblock %}{% block page %}login{% endblock %}
+{% block isi %}
+<div class="gelembung b1"></div><div class="gelembung b2"></div><div class="gelembung b3"></div>
+<button class="tema-btn pojok" id="tema" title="Ganti mode">🌓</button>
+<main class="login-wrap">
+  <section class="login-kartu">
+    <div class="maskot" id="maskot"><div class="mata"><i></i><i></i></div><div class="mulut"></div><b class="tangan kiri"></b><b class="tangan kanan"></b></div>
+    <img class="app-icon" src="{{ url_for('static', filename='icon.svg') }}" alt="Si Siswa">
+    <h1>Si Siswa</h1>
+    <p class="redup">Halo, Mahasiswa! 👋 Masuk untuk melihat jadwal dan tugasmu.</p>
+    <div class="tab"><button class="aktif" data-mode="masuk">Masuk</button><button data-mode="daftar">Daftar</button></div>
+    <form id="form-login">
+      <input id="nama" placeholder="Nama lengkap" class="hide" autocomplete="name">
+      <input id="email" type="email" placeholder="Email" required autocomplete="email">
+      <input id="pw" type="password" placeholder="Password (min. 6 karakter)" required autocomplete="current-password">
+      <p class="galat" id="galat"></p>
+      <button class="btn" id="kirim">Masuk 🚀</button>
+    </form>
+  </section>
+</main>
+{% endblock %}

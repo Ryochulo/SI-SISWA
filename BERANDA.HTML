@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block judul %}Beranda{% endblock %}{% block page %}beranda{% endblock %}
+{% block isi %}
+<header class="bar"><strong class="logo"><img class="logo-img" src="{{ url_for('static', filename='icon.svg') }}" alt="">Si Siswa</strong>
+  <nav><a class="aktif" href="/beranda">Beranda</a><a href="/profil">Profil</a></nav>
+  <button class="tema-btn" id="tema" title="Ganti mode">🌓</button></header>
+<main class="grid">
+  <section class="kartu"><h2>📅 Jadwal Kuliah</h2>
+    <p class="redup" id="info-hari"></p><div id="jadwal"></div>
+    <details><summary class="btn kecil">＋ Tambah Jadwal</summary>
+      <form id="f-jadwal" class="form-mini">
+        <input name="matkul" placeholder="Mata kuliah" required>
+        <select name="hari"><option>Senin<option>Selasa<option>Rabu<option>Kamis<option>Jumat<option>Sabtu<option>Minggu</select>
+        <label>Mulai <input type="time" name="mulai" required></label><label>Selesai <input type="time" name="selesai" required></label>
+        <input name="ruang" placeholder="Ruang (opsional)"><button class="btn">Simpan</button></form></details></section>
+
+  <section class="kartu"><h2>🗓️ Kalender</h2>
+    <div class="kal-kepala"><button class="btn kecil" id="prev">‹</button><strong id="bulan"></strong><button class="btn kecil" id="next">›</button></div>
+    <div class="kal" id="kal"></div><div id="kal-detail" class="redup">Ketuk tanggal untuk melihat tugas.</div>
+    <p class="legenda"><span class="titik biru"></span> deadline <span class="titik hijau"></span> selesai <span class="titik merah"></span> terlewat</p></section>
+
+  <section class="kartu lebar"><h2>📝 Tugas</h2>
+    <div class="tab"><button class="aktif" data-tab="aktif">Belum selesai</button><button data-tab="riwayat">Riwayat selesai</button></div>
+    <div id="tugas"></div>
+    <form id="f-tugas" class="form-mini baris">
+      <input name="judul" placeholder="Judul tugas" required><input name="matkul" placeholder="Mata kuliah">
+      <input type="datetime-local" name="deadline" required><button class="btn">Tambah Tugas</button></form>
+    <div class="baris nada"><label>🔔 Nada <select id="nada"><option value="0">Ceria<option value="1">Lonceng<option value="2">Digital</select></label>
+      <button class="btn kecil" id="tes">Tes nada</button><button class="btn kecil" id="izin">Aktifkan notifikasi</button></div></section>
+</main>
+{% endblock %}
